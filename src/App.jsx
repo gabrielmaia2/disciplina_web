@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Atividade2 from './atividade_2/Atividade2';
+import Atividade3 from './atividade_3/Atividade3';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Atividade2 />
+        <Atividade3 />
       </header>
     </div>
   );

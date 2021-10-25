@@ -1,0 +1,52 @@
+.votar-cidades {
+}
+
+.cidades {
+  border-radius: 20px;
+  text-align: left;
+  background-color: #1b1e24;
+  padding: 1px 30px;
+  border-radius: 30px;
+  box-shadow: 0.1rem 0.1rem 0.1em rgba(0, 0, 0, 0.726);
+  width: 35%;
+}
+
+.mais-votadas {
+  padding: 1px 30px;
+  width: 65%;
+}
+
+.content {
+  width: 70vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.button-container {
+  padding: 30px;
+}
+
+.button-container > * {
+  margin: 10px;
+}
+
+button {
+  border: none;
+  background-color: #1b1e24;
+  color: inherit;
+  padding: 20px;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0.05rem 0.05rem 0.1em rgba(0, 0, 0, 0.726);
+  transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+button:active {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.726);
+  background-color: #0c0d0f;
+}
