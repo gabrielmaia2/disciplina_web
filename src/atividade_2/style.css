@@ -1,0 +1,33 @@
+img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.arena {
+  background-color: #1b1e24;
+  padding: 20px;
+  border: 1px solid #3b4252;
+  border-radius: 30px;
+  width: 80vw;
+  height: 70vh;
+}
+
+.arena .fighters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: stretch;
+  height: 100%;
+}
+
+.arena .fighters > * {
+  flex-grow: 1;
+  margin: 20px;
+}
+
+.entity {
+  background-color: #252931;
+  border-radius: 20px;
+  min-width: 300px;
+  min-height: 300px;
+}
