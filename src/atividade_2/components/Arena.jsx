@@ -1,18 +1,25 @@
-import React from 'react';
-import Enemy from './Enemy';
-import Hero from './Hero';
-import { heroUrl, enemyUrl } from '../names';
+import React, { Children } from 'react';
+import PropTypes from 'prop-types';
 
 import '../style.css';
 
-export default function Arena() {
+export default function Arena({ arena, children }) {
   return (
     <div className="arena">
-      <h1>Arena</h1>
+      <h1>{arena}</h1>
       <div className="fighters">
-        <Hero name="Gato de Botas" img={heroUrl} />
-        <Enemy name="Ultra Duck" img={enemyUrl} />
+        {
+          Children.map(children, (e) => React.cloneElement(e, { arena }))
+        }
       </div>
     </div>
   );
 }
+
+Arena.propTypes = {
+  arena: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+};
