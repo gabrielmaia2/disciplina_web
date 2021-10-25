@@ -1,22 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import '../styles/aluno.css';
 
-export default class Aluno extends Component {
-  render() {
-    const { nome, idade, curso, cidade, email } = this.props;
-
-    return (
-      <div className="aluno">
-        <p>Nome: {nome}</p>
-        <p>Idade: {idade} anos</p>
-        <p>Curso: {curso}</p>
-        <p>Cidade Origem: {cidade}</p>
-        <p>Email: {email}</p>
-      </div>
-    );
-  }
+export default function Aluno({
+  nome, idade, curso, cidade, email,
+}) {
+  return (
+    <div className="aluno">
+      <p>Nome: {nome}</p>
+      <p>Idade: {idade} anos</p>
+      <p>Curso: {curso}</p>
+      <p>Cidade Origem: {cidade}</p>
+      <p>Email: {email}</p>
+    </div>
+  );
 }
 
 Aluno.propTypes = {
