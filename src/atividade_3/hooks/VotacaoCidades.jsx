@@ -64,6 +64,11 @@ export default function VotacaoCidades({ cidades }) {
     <button type="button" onClick={() => votar[i](votos[i] + 1)}>{`Votar em ${cidade}`}</button>
   ));
 
+  let somaVotos = 0;
+  votos.forEach((voto) => {
+    somaVotos += voto;
+  });
+
   return (
     <div className="votar-cidades">
       <h1>Votação de cidades:</h1>
@@ -77,6 +82,7 @@ export default function VotacaoCidades({ cidades }) {
           {maiores.join(', ')}
           <h3>{menorString}</h3>
           {menores.join(', ')}
+          <h3>{`Total de votos: ${somaVotos}`}</h3>
         </div>
       </div>
       <div className="button-container">
