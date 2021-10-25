@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Gabriel from './components/Gabriel';
+import Gabriel from './atividade_1/components/Gabriel';
 
 function App() {
   return (
