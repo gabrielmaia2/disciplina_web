@@ -6,14 +6,7 @@ import '../style.css';
 export default function VotacaoCidades({ cidades }) {
   // preferi criar uma props para colocar as cidades (deixando mais reusável)
 
-  const votos = [];
-  const votar = [];
-
-  cidades.forEach(() => {
-    const [votosC, votarC] = useState(0);
-    votos.push(votosC);
-    votar.push(votarC);
-  });
+  const [votos, mudarVotos] = useState(cidades.map(() => 0));
   const [maior, setMaior] = useState(votos[0]);
   const [menor, setMenor] = useState(votos[0]);
 
@@ -29,6 +22,13 @@ export default function VotacaoCidades({ cidades }) {
     setMaior(maiorNovo);
     setMenor(menorNovo);
   }, [votos, cidades]);
+
+  function votar(numCidade) {
+    mudarVotos(votos.map((numVotos, i) => {
+      if (i === numCidade) return numVotos + 1;
+      return numVotos;
+    }));
+  }
 
   function calculaMaiores() {
     const maiores = [];
@@ -61,7 +61,7 @@ export default function VotacaoCidades({ cidades }) {
 
   const cidadesRender = cidades.map((cidade, i) => <h3>{`${cidade}: ${votos[i]}`}</h3>);
   const votarButtons = cidades.map((cidade, i) => (
-    <button type="button" onClick={() => votar[i](votos[i] + 1)}>{`Votar em ${cidade}`}</button>
+    <button type="button" onClick={() => votar(i)}>{`Votar em ${cidade}`}</button>
   ));
 
   let somaVotos = 0;
