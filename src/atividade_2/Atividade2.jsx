@@ -1,8 +1,8 @@
 import React from 'react';
-import World from './components/World';
-import Arena from './components/Arena';
-import Enemy from './components/Enemy';
-import Hero from './components/Hero';
+import World from './hooks/World';
+import Arena from './hooks/Arena';
+import Enemy from './hooks/Enemy';
+import Hero from './hooks/Hero';
 import { heroUrl, enemyUrl } from './names';
 
 function Atividade2() {
