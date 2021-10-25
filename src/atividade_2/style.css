@@ -8,8 +8,7 @@ img {
   padding: 20px;
   border: 1px solid #3b4252;
   border-radius: 30px;
-  width: 80vw;
-  height: 70vh;
+  min-width: 80vw;
 }
 
 .arena .fighters {
@@ -30,4 +29,8 @@ img {
   border-radius: 20px;
   min-width: 300px;
   min-height: 300px;
+}
+
+.world > * {
+  margin: 40px;
 }

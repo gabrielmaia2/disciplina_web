@@ -6,7 +6,7 @@ import '../style.css';
 export default function Enemy({ name, img }) {
   return (
     <div className="entity">
-      <h1>Inimigo</h1>
+      <h2>Inimigo</h2>
       <h4>{`Nome: ${name}`}</h4>
       <img src={img} alt="Enemy" />
     </div>
