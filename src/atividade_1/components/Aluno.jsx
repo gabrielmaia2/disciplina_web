@@ -8,11 +8,11 @@ export default function Aluno({
 }) {
   return (
     <div className="aluno">
-      <p>Nome: {nome}</p>
-      <p>Idade: {idade} anos</p>
-      <p>Curso: {curso}</p>
-      <p>Cidade Origem: {cidade}</p>
-      <p>Email: {email}</p>
+      <p>{`Nome: ${nome}`}</p>
+      <p>{`Idade: ${idade} anos`}</p>
+      <p>{`Curso: ${curso}`}</p>
+      <p>{`Cidade Origem: ${cidade}`}</p>
+      <p>{`Email: ${email}`}</p>
     </div>
   );
 }

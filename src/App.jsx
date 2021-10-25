@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import Gabriel from './atividade_1/components/Gabriel';
 
