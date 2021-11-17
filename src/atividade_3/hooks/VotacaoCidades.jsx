@@ -61,7 +61,7 @@ export default function VotacaoCidades({ cidades }) {
 
   const cidadesRender = cidades.map((cidade, i) => <h3>{`${cidade}: ${votos[i]}`}</h3>);
   const votarButtons = cidades.map((cidade, i) => (
-    <button type="button" onClick={() => votar(i)}>{`Votar em ${cidade}`}</button>
+    <button className="votar" type="button" onClick={() => votar(i)}>{`Votar em ${cidade}`}</button>
   ));
 
   let somaVotos = 0;
@@ -72,7 +72,7 @@ export default function VotacaoCidades({ cidades }) {
   return (
     <div className="votar-cidades">
       <h1>Votação de cidades:</h1>
-      <div className="content">
+      <div className="content center-margin">
         <div className="cidades">
           <h2 className="center-text">Votos:</h2>
           {cidadesRender}
@@ -85,7 +85,7 @@ export default function VotacaoCidades({ cidades }) {
           <h3>{`Total de votos: ${somaVotos}`}</h3>
         </div>
       </div>
-      <div className="button-container">
+      <div className="button-container center-margin">
         {votarButtons}
       </div>
     </div>
