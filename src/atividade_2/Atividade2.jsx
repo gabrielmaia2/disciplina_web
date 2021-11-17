@@ -5,6 +5,8 @@ import Enemy from './hooks/Enemy';
 import Hero from './hooks/Hero';
 import { heroUrl, enemyUrl } from './names';
 
+import '../App.css';
+
 function Atividade2() {
   return (
     <World>
