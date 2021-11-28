@@ -22,7 +22,7 @@ export default function AddAluno() {
         setCurso('');
         setIRA(0);
       } else {
-        setError(Error('Failed adding user'));
+        setError(Error('Falha ao adicionar aluno'));
       }
     } catch (e) {
       setError(e);

@@ -17,7 +17,7 @@ export default function ListAlunos() {
         if (status === 200 && success) {
           setAlunos(newAlunos);
         } else {
-          setError(Error('Failed fetching data'));
+          setError(Error('Falha ao buscar lista de alunos'));
         }
       } catch (e) {
         setError(e);
@@ -32,7 +32,7 @@ export default function ListAlunos() {
       if (status === 200 && success) {
         updateList();
       } else {
-        setError(Error(`Failed deleting aluno with id ${id}`));
+        setError(Error(`Falha ao deletar aluno com id id ${id}`));
       }
     } catch (e) {
       setError(e);
@@ -54,12 +54,12 @@ export default function ListAlunos() {
       <Col xs={0} className="border">{a.nome}</Col>
       <Col xs={0} className="border">{a.curso}</Col>
       <Col xs={0} className="border">{a.IRA}</Col>
-      <Col xs="auto"><Button variant="primary" className="m-1">Edit</Button></Col>
-      <Col xs="auto"><Button onClick={() => deleteAluno(a.id)} variant="danger" className="m-1">Delete</Button></Col>
+      <Col xs="auto"><Button variant="primary" className="m-1">Editar</Button></Col>
+      <Col xs="auto"><Button onClick={() => deleteAluno(a.id)} variant="danger" className="m-1">Deletar</Button></Col>
     </Row>,
   ));
 
-  if (alunos.length === 0) { alunosView = <Row><Col className="border">Empty</Col></Row>; }
+  if (alunos.length === 0) { alunosView = <Row><Col className="border">Lista vazia</Col></Row>; }
 
   return (
     <div className="text-center">
@@ -67,7 +67,7 @@ export default function ListAlunos() {
       <Container fluid>
         {alunosView}
       </Container>
-      <Button className="p-2 m-2" variant="primary" onClick={updateList}>Update</Button>
+      <Button className="p-2 m-2" variant="primary" onClick={updateList}>Atualizar lista</Button>
     </div>
   );
 }
