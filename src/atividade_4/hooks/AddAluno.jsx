@@ -72,10 +72,10 @@ export default function AddAluno() {
 
   if (error) {
     return (
-      <div className="error">
+      <Alert variant="danger">
         Um erro ocorreu
         {String(error)}
-      </div>
+      </Alert>
     );
   }
 
