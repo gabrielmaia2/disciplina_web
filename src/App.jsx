@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Atividade4 from './atividade_4/Atividade4';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './style.css';
 
 function App() {
   return (
