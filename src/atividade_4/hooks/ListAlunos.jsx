@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import {
-  Col, Row, Button, Container,
+  Col, Row, Button, Container, Alert,
 } from 'react-bootstrap';
 
 export default function ListAlunos() {
@@ -26,9 +26,9 @@ export default function ListAlunos() {
 
   if (error) {
     return (
-      <div className="error">
+      <Alert variant="danger">
         {String(error)}
-      </div>
+      </Alert>
     );
   }
 
