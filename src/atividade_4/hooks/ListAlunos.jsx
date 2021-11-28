@@ -26,6 +26,19 @@ export default function ListAlunos() {
     fetchAlunos();
   }, [updater]);
 
+  const deleteAluno = async (id) => {
+    try {
+      const { status, data: { success } } = await axios.delete(`/alunos/delete/${id}`);
+      if (status === 200 && success) {
+        updateList();
+      } else {
+        setError(Error(`Failed deleting aluno with id ${id}`));
+      }
+    } catch (e) {
+      setError(e);
+    }
+  };
+
   if (error) {
     return (
       <Alert variant="danger">
@@ -42,7 +55,7 @@ export default function ListAlunos() {
       <Col xs={0} className="border">{a.curso}</Col>
       <Col xs={0} className="border">{a.IRA}</Col>
       <Col xs="auto"><Button variant="primary" className="m-1">Edit</Button></Col>
-      <Col xs="auto"><Button variant="danger" className="m-1">Delete</Button></Col>
+      <Col xs="auto"><Button onClick={() => deleteAluno(a.id)} variant="danger" className="m-1">Delete</Button></Col>
     </Row>,
   ));
 
