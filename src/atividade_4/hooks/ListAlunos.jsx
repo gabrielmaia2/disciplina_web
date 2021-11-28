@@ -36,13 +36,13 @@ export default function ListAlunos() {
 
   const alunosView = [];
   alunos.forEach((a) => alunosView.push(
-    <Row key={a.id} className="p-1">
+    <Row key={a.id}>
       <Col xs={0}>{a.id}</Col>
       <Col xs={0}>{a.nome}</Col>
       <Col xs={0}>{a.curso}</Col>
       <Col xs={0}>{a.IRA}</Col>
-      <Col xs="auto"><Button variant="primary">Edit</Button></Col>
-      <Col xs="auto"><Button variant="danger">Delete</Button></Col>
+      <Col xs="auto"><Button variant="primary" className="m-1">Edit</Button></Col>
+      <Col xs="auto"><Button variant="danger" className="m-1">Delete</Button></Col>
     </Row>,
   ));
 
