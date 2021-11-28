@@ -47,8 +47,8 @@ export default function ListAlunos() {
   ));
 
   return (
-    <div>
-      <h1 className="text-center p-2">Alunos</h1>
+    <div className="text-center">
+      <h1 className="p-2">Alunos</h1>
       <Container fluid>
         {alunosView}
       </Container>
