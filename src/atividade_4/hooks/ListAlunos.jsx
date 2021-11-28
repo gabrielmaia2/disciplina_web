@@ -7,6 +7,8 @@ import {
 export default function ListAlunos() {
   const [alunos, setAlunos] = useState([]);
   const [error, setError] = useState(null);
+  const [updater, setUpdater] = useState(false);
+  const updateList = () => setUpdater(!updater);
 
   useEffect(() => {
     const fetchAlunos = async () => {
@@ -22,7 +24,7 @@ export default function ListAlunos() {
       }
     };
     fetchAlunos();
-  }, []);
+  }, [updater]);
 
   if (error) {
     return (
@@ -50,6 +52,7 @@ export default function ListAlunos() {
       <Container fluid>
         {alunosView}
       </Container>
+      <Button className="p-2 m-2" variant="primary" onClick={updateList}>Update</Button>
     </div>
   );
 }
