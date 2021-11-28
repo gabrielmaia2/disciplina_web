@@ -22,6 +22,7 @@ export default function Atividade4() {
 
       <Routes>
         <Route path="/add" element={<AddAluno />} />
+        <Route path="/edit/:id" element={<AddAluno />} />
         <Route path="/" element={<ListAlunos />} />
       </Routes>
     </div>
