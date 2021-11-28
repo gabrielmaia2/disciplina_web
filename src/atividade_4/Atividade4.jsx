@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Atividade5() {
+export default function Atividade4() {
   return (
     <div />
   );
