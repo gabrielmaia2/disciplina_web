@@ -1,10 +1,10 @@
 import React from 'react';
-import ListAlunos from './hooks/ListAlunos';
+import AddAluno from './hooks/AddAluno';
 
 export default function Atividade4() {
   return (
     <div>
-      <ListAlunos />
+      <AddAluno />
     </div>
   );
 }
