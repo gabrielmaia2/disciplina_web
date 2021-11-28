@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Routes, Route, Link } from 'react-router-dom';
-import AddAluno from './hooks/AddAluno';
+import EditAluno from './hooks/EditAluno';
 import ListAlunos from './hooks/ListAlunos';
 
 export default function Atividade4() {
@@ -21,8 +21,8 @@ export default function Atividade4() {
       </Navbar>
 
       <Routes>
-        <Route path="/add" element={<AddAluno />} />
-        <Route path="/edit/:id" element={<AddAluno />} />
+        <Route path="/add" element={<EditAluno />} />
+        <Route path="/edit/:id" element={<EditAluno />} />
         <Route path="/" element={<ListAlunos />} />
       </Routes>
     </div>

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 
-export default function AddAluno() {
+export default function EditAluno() {
   const [nome, setNome] = useState('');
   const [curso, setCurso] = useState('');
   const [IRA, setIRA] = useState(0);
