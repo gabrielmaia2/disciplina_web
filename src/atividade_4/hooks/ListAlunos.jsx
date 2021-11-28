@@ -47,7 +47,7 @@ export default function ListAlunos() {
     );
   }
 
-  const alunosView = [];
+  let alunosView = [];
   alunos.forEach((a) => alunosView.push(
     <Row key={a.id}>
       <Col xs={0} className="border">{a.id}</Col>
@@ -58,6 +58,8 @@ export default function ListAlunos() {
       <Col xs="auto"><Button onClick={() => deleteAluno(a.id)} variant="danger" className="m-1">Delete</Button></Col>
     </Row>,
   ));
+
+  if (alunos.length === 0) { alunosView = <Row><Col className="border">Empty</Col></Row>; }
 
   return (
     <div className="text-center">
