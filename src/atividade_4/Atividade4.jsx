@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Routes, Route, Link } from 'react-router-dom';
-import EditAluno from './hooks/EditAluno';
-import ListAlunos from './hooks/ListAlunos';
+import EditAluno from './components/EditAluno';
+import ListAlunos from './components/ListAlunos';
 
 export default function Atividade4() {
   return (

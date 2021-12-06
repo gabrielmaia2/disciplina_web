@@ -1,5 +1,5 @@
 import React from 'react';
-import VotacaoCidades from './hooks/VotacaoCidades';
+import VotacaoCidades from './components/VotacaoCidades';
 
 import '../App.css';
 

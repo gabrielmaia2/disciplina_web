@@ -1,5 +1,5 @@
 import React from 'react';
-import Gabriel from './hooks/Gabriel';
+import Gabriel from './components/Gabriel';
 
 import '../App.css';
 
