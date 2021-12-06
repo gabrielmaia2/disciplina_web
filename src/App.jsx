@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import Atividade4 from './atividade_4/Atividade4';
+import Atividade6 from './atividade_6/Atividade6';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <header className="App-header">
-          <Atividade4 />
+          <Atividade6 />
         </header>
       </div>
     </BrowserRouter>
