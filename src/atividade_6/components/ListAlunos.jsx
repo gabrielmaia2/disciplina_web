@@ -14,11 +14,12 @@ export default function ListAlunos() {
   useEffect(() => {
     const fetchAlunos = async () => {
       try {
-        const { status, data: { success, alunos: newAlunos } } = await axios.get('/alunos/getall');
-        if (status === 200 && success) {
-          setAlunos(newAlunos);
+        const { status, data } = await axios.get('/alunos/getall');
+        if (status >= 200 && status < 300) {
+          console.log(data);
+          setAlunos(data);
         } else {
-          setError(Error('Falha ao buscar lista de alunos'));
+          setError(Error(JSON.stringify(data)));
         }
       } catch (e) {
         setError(e);
@@ -29,11 +30,11 @@ export default function ListAlunos() {
 
   const deleteAluno = async (_id) => {
     try {
-      const { status, data: { success } } = await axios.delete(`/alunos/delete/${_id}`);
-      if (status === 200 && success) {
+      const { status, data } = await axios.delete(`/alunos/delete/${_id}`);
+      if (status >= 200 && status < 300) {
         updateList();
       } else {
-        setError(Error(`Falha ao deletar aluno com id id ${_id}`));
+        setError(Error(JSON.stringify(data)));
       }
     } catch (e) {
       setError(e);

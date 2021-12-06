@@ -20,13 +20,13 @@ export default function EditAluno() {
     event.preventDefault();
     try {
       const aluno = { nome, curso, IRA };
-      const { status, data: { success } } = await axios.post('/alunos/post', aluno);
-      if (status === 200 && success) {
+      const { status, data } = await axios.post('/alunos/post', aluno);
+      if (status >= 200 && status < 300) {
         setNome('');
         setCurso('');
         setIRA(0);
       } else {
-        setError(Error('Falha ao adicionar aluno'));
+        setError(Error(JSON.stringify(data)));
       }
     } catch (e) {
       setError(e);
@@ -37,11 +37,11 @@ export default function EditAluno() {
     event.preventDefault();
     try {
       const aluno = { nome, curso, IRA };
-      const { status, data: { success } } = await axios.put(`/alunos/put/${_id}`, aluno);
-      if (status === 200 && success) {
+      const { status, data } = await axios.put(`/alunos/put/${_id}`, aluno);
+      if (status >= 200 && status < 300) {
         navigate('/');
       } else {
-        setError(Error('Falha ao atualizar aluno'));
+        setError(Error(JSON.stringify(data)));
       }
     } catch (e) {
       setError(e);
@@ -54,13 +54,13 @@ export default function EditAluno() {
     if (_id) {
       const fetchData = async () => {
         try {
-          const { status, data: { success, aluno } } = await axios.get(`/alunos/get/${_id}`);
-          if (status === 200 && success) {
-            setNome(aluno.nome);
-            setCurso(aluno.curso);
-            setIRA(aluno.IRA);
+          const { status, data } = await axios.get(`/alunos/get/${_id}`);
+          if (status >= 200 && status < 300) {
+            setNome(data.nome);
+            setCurso(data.curso);
+            setIRA(data.IRA);
           } else {
-            setError(Error('Falha ao buscar dados do aluno'));
+            setError(Error(JSON.stringify(data)));
           }
         } catch (e) {
           setError(e);
