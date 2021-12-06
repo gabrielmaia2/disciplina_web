@@ -8,4 +8,4 @@ Em cada pasta de atividade tem um arquivo `Atividade.jsx`. Para visualizar, bast
 
 Para rodar o código, basta rodar `yarn install` e depois `yarn start`.
 
-O backend da atividade 04 pode ser encontrado [aqui](https://github.com/gabrielmaia2/crud-atividade-04).
+O backend das atividades 04 e 06 pode ser encontrado [aqui](https://github.com/gabrielmaia2/crud-atividade-04).
