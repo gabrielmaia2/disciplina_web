@@ -22,7 +22,7 @@ export default function Atividade6() {
 
       <Routes>
         <Route path="/add" element={<EditAluno />} />
-        <Route path="/edit/:id" element={<EditAluno />} />
+        <Route path="/edit/:_id" element={<EditAluno />} />
         <Route path="/" element={<ListAlunos />} />
       </Routes>
     </div>

@@ -14,7 +14,7 @@ export default function EditAluno() {
   };
   const navigate = useNavigate();
   const params = useParams();
-  const { id } = params;
+  const { _id } = params;
 
   const addAluno = async (event) => {
     event.preventDefault();
@@ -37,7 +37,7 @@ export default function EditAluno() {
     event.preventDefault();
     try {
       const aluno = { nome, curso, IRA };
-      const { status, data: { success } } = await axios.put(`/alunos/put/${id}`, aluno);
+      const { status, data: { success } } = await axios.put(`/alunos/put/${_id}`, aluno);
       if (status === 200 && success) {
         navigate('/');
       } else {
@@ -48,13 +48,13 @@ export default function EditAluno() {
     }
   };
 
-  const handleSubmit = id === undefined ? addAluno : editAluno;
+  const handleSubmit = _id === undefined ? addAluno : editAluno;
 
   useEffect(() => {
-    if (id) {
+    if (_id) {
       const fetchData = async () => {
         try {
-          const { status, data: { success, aluno } } = await axios.get(`/alunos/get/${id}`);
+          const { status, data: { success, aluno } } = await axios.get(`/alunos/get/${_id}`);
           if (status === 200 && success) {
             setNome(aluno.nome);
             setCurso(aluno.curso);
@@ -68,7 +68,7 @@ export default function EditAluno() {
       };
       fetchData();
     }
-  }, [id]);
+  }, [_id]);
 
   if (error) {
     return (
@@ -81,7 +81,7 @@ export default function EditAluno() {
 
   return (
     <div>
-      <h1 className="text-center p-2">{id === undefined ? 'Adicionar aluno' : 'Editar aluno' }</h1>
+      <h1 className="text-center p-2">{_id === undefined ? 'Adicionar aluno' : 'Editar aluno' }</h1>
       <Form onSubmit={handleSubmit} className="w-25 mx-auto">
         <Form.Group className="mb-3" controlId="formNome">
           <Form.Label className="mx-1">Nome</Form.Label>
@@ -97,7 +97,7 @@ export default function EditAluno() {
         </Form.Group>
 
         <Button className="mx-1" variant="primary" type="submit">
-          {id === undefined ? 'Adicionar' : 'Editar' }
+          {_id === undefined ? 'Adicionar' : 'Editar' }
         </Button>
       </Form>
     </div>

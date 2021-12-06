@@ -27,13 +27,13 @@ export default function ListAlunos() {
     fetchAlunos();
   }, [updater]);
 
-  const deleteAluno = async (id) => {
+  const deleteAluno = async (_id) => {
     try {
-      const { status, data: { success } } = await axios.delete(`/alunos/delete/${id}`);
+      const { status, data: { success } } = await axios.delete(`/alunos/delete/${_id}`);
       if (status === 200 && success) {
         updateList();
       } else {
-        setError(Error(`Falha ao deletar aluno com id id ${id}`));
+        setError(Error(`Falha ao deletar aluno com id id ${_id}`));
       }
     } catch (e) {
       setError(e);
@@ -50,13 +50,13 @@ export default function ListAlunos() {
 
   let alunosView = [];
   alunos.forEach((a) => alunosView.push(
-    <Row key={a.id}>
-      <Col xs={0} className="border">{a.id}</Col>
+    <Row key={a._id}>
+      <Col xs={0} className="border">{a._id}</Col>
       <Col xs={0} className="border">{a.nome}</Col>
       <Col xs={0} className="border">{a.curso}</Col>
       <Col xs={0} className="border">{a.IRA}</Col>
-      <Col xs="auto"><Button as={Link} to={`/edit/${a.id}`} variant="primary" className="m-1">Editar</Button></Col>
-      <Col xs="auto"><Button onClick={() => deleteAluno(a.id)} variant="danger" className="m-1">Deletar</Button></Col>
+      <Col xs="auto"><Button as={Link} to={`/edit/${a._id}`} variant="primary" className="m-1">Editar</Button></Col>
+      <Col xs="auto"><Button onClick={() => deleteAluno(a._id)} variant="danger" className="m-1">Deletar</Button></Col>
     </Row>,
   ));
 
