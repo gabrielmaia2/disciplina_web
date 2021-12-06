@@ -33,7 +33,7 @@ export default function ListAlunos() {
       if (status === 200 && success) {
         updateList();
       } else {
-        setError(Error(`Falha ao deletar aluno com id id ${id}`));
+        setError(Error(`Falha ao deletar aluno com id ${id}`));
       }
     } catch (e) {
       setError(e);
